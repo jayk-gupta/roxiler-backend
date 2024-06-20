@@ -4,7 +4,14 @@ const cors = require("cors");
 const router = require("./routes/routes");
 require("dotenv").config(); 
 const app = express();
-app.use(cors())
+
+const corOptions = {
+  origin: "https://roxiler-frontend-vte2.onrender.com",
+};
+
+app.use(cors(corOptions))
+
+
 app.use(express.json());
 const PORT = process.env.PORT || 3000;
 const PASSWORD = process.env.PASSWORD;
